@@ -1,0 +1,7 @@
+shenyu:
+  register:
+    registerType: http # 启用http方式将服务注册到shenyu-admin
+    serverLists: http://localhost:9095 # shenyu-admin服务地址
+    props:
+      username: admin  # shenyu-admin控制台账号
+      password: 123456 # shenyu-admin控制台密码

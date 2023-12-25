@@ -1,0 +1,19 @@
+shenyu:
+  register:
+    registerType: http # 启用http方式将服务注册到shenyu-admin
+    serverLists: http://localhost:9095 # shenyu-admin服务地址
+    props:
+      username: admin  # shenyu-admin控制台账号
+      password: 123456 # shenyu-admin控制台密码
+
+  client:
+    http: # springBoot服务引入shenyu-spring-boot-starter-client-springmvc，表明客户端类型为http服务
+      props:
+        contextPath: /mySpringBoot # 当前项目从网关shenyu-bootstrap调用时的代理url前缀
+        appName: springboot-client-app # 当前项目注册到shenyu-admin的应用名称
+spring:
+  application:
+    name: springboot-client-app
+
+server:
+  port: 8081

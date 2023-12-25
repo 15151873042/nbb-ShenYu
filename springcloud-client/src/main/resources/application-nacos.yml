@@ -1,0 +1,8 @@
+shenyu:
+  register:
+    registerType: nacos # 启用nacos方式将服务注册到shenyu-admin
+    serverLists: http://127.0.0.1:8848 # nacos地址
+    props:
+      username: nacos # nacos用户名
+      password: nacos # nacos密码
+      nacosNameSpace: ShenyuRegisterCenter # nacos命名控件

@@ -1,0 +1,25 @@
+shenyu:
+  client:
+    springCloud: # springCloud服务引入shenyu-spring-boot-starter-client-springcloud，表明客户端类型为springCloud服务
+      props:
+        contextPath: /mySpringCloud # 当前项目从网关shenyu-bootstrap调用时的代理url前缀
+        # appName: 当前项目注册到shenyu-admin的应用名称（此处无需配置appName，配置了也不生效，会直接取spring.application.name的值作为应用名称）
+        host: 127.0.0.1 # 当前服务的ip，多网卡环境，最好指定
+
+
+spring:
+  application:
+    name: springcloud-client-app
+  cloud:
+    nacos:
+      discovery:
+        ip: 127.0.0.1
+        server-addr: 127.0.0.1:8848
+        namespace: ShenyuRegisterCenter
+        username: nacos
+        password: nacos
+  profiles:
+    active: http # 指定注册方式
+
+server:
+  port: 8082
